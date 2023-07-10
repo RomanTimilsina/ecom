@@ -1,0 +1,51 @@
+.footer{
+  margin: 100px 100px;
+  
+  .top{
+    display: flex;
+    justify-content: space-evenly;
+    .item{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      h1{
+        color: rgb(103, 101, 101);
+        font-size: 20px;
+      }
+
+      span{
+        text-align: justify;
+        width: 250px;
+        color: rgb(130, 130, 130);
+      }
+    }
+  }
+
+  .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    .left{
+      
+      .logo{
+        color: rgb(15, 106, 225);
+        font-size: 18px;
+        font-weight:600;
+        padding: 10px;
+      }
+
+      .copyright{
+        color: rgb(130, 130, 130);
+
+      }
+    }
+
+    .right{
+      img{
+        height: 50px;
+      }
+    }
+  }
+}

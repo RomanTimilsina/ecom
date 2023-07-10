@@ -1,0 +1,58 @@
+.categories{
+  display: flex;
+  height: 80vh;
+  gap: 10px;  margin: 10px;
+
+  .col{
+    flex: 1;
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+  }
+  .col-l{
+    flex: 2;
+    
+
+    .row{
+      display: flex;
+      gap: 0px;
+      
+    }
+  }
+  .row{
+    flex:1;
+    position: relative;
+    overflow: hidden;
+    
+    button{
+      position: absolute;
+      height: 20px;
+      background-color: #fff;
+      border: none;
+      color: navy;
+      width: fit-content;
+      top: 0px;
+      left: 0px;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      min-width: 100px;
+      text-transform: uppercase;
+    }
+
+
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+    }
+  }
+ 
+  
+}
+
+
+
+
