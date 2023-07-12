@@ -3,7 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import './Cart.scss'
 
 const Cart = () => {
-  const [total, setTotal] = useState(0)
+  
 
   const data = [{
     id:1,
@@ -36,10 +36,11 @@ const Cart = () => {
     price:19
   }]
 
-  var x = 0
+  var total = 0
   data.map((item) => {
-    x = x + item.price
+    total = total + item.price
   })
+
 
   return (
     <div className='cart' >
@@ -62,7 +63,7 @@ const Cart = () => {
       </div>
       <div className='total'>
         <span>Total:</span>
-        <span>{x}</span>
+        <span>{total}</span>
         </div>
         <div className="reset">
           <span style={{color:'red'}}>Reset Cart</span>
