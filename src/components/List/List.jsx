@@ -1,50 +1,29 @@
 import Card from '../Card/Card.jsx';
 import React from 'react'
 import './List.scss'
+import useFetch from '../../hooks/useFetch.js';
 
-const List = () => {
-  const data = [{
-    id:1,
-    img:'https://assets.burberry.com/is/image/Burberryltd/372C80E3-CC1E-46CD-A6D8-DB89EE09F784?$BBY_V2_SL_1x1$&wid=1500&hei=1500',
-    img2:'https://blankslatepatterns.com/cdn/shop/products/FiestaModeled_600x.jpg?v=1478279055',
-    isNew:true,
-    title:'Skirt',
-    oldPrice:12,
-    price:19
-  },
-  {
-    id:2,
-    img:'https://assets.burberry.com/is/image/Burberryltd/372C80E3-CC1E-46CD-A6D8-DB89EE09F784?$BBY_V2_SL_1x1$&wid=1500&hei=1500',
-    isNew:true,
-    title:'Skirt',
-    oldPrice:12,
-    price:19
-  },
-  {
-    id:3,
-    img:'https://assets.burberry.com/is/image/Burberryltd/372C80E3-CC1E-46CD-A6D8-DB89EE09F784?$BBY_V2_SL_1x1$&wid=1500&hei=1500',
-    title:'Skirt',
-    oldPrice:12,
-    price:19
-  },
-  {
-    id:4,
-    img:'https://assets.burberry.com/is/image/Burberryltd/372C80E3-CC1E-46CD-A6D8-DB89EE09F784?$BBY_V2_SL_1x1$&wid=1500&hei=1500',
-    title:'Skirt',
-    oldPrice:12,
-    price:19
-  }]
+const List = ({catId, maxPrice, sort, subCats }) => {
+ 
+  const { data, loading, error} = useFetch(
+    `/products?populate=*&[filters][categories][id][$eq]=${catId}${subCats.map( item => `&[filters][sub_categories][id][$eq]=${item}`)}`
+  )
+
   return (
     <div className='list'>
       {
-        data?.map(item => (
+        loading ? 'Loading' : data?.map(item => (
           <Card  item={item} key={item.id} />
-        ))
+        )) 
       }
     </div>
   )
 }
 
 export default List
+
+
+
+
 
 
